@@ -1,0 +1,37 @@
+---
+title: ""HAZARD RADIO SEMANA 11""
+author: "jonathan vargas rumiche"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#COEFICIENTE BETA 
+beta<--0.405
+
+#Cálculo del Hazar ratio 
+HR<-exp(beta)
+
+#mostrar resultado 
+HR
+
+```
+
+You can add options to executable code like this
+
+```{r}
+#Interpretacion
+
+cat("Hazard ratio=",round(HR,3),"\n")
+cat("El programa reduce el riesgo en", round((1-HR)*100,1),"% respecto al grupo de control.")
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
