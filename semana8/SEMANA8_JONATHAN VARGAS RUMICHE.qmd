@@ -1,0 +1,56 @@
+---
+title: "SEMANA 8 - GRAFICA DE LA RECTA DE REGRESION"
+author: "JONATHAN VARGAS RUMICHE"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+#DATOS
+
+x <- c(2,4,6,8,10)
+
+y <- c(55,63,71,80,88)
+```
+
+You can add options to executable code like this
+
+```{r}
+#Correlación de pearsson
+
+cor(x,y)
+
+#Obtener coeficientes de la regresión
+#Modelo
+modelo <- lm(y ~ x)
+coef(modelo)
+
+#Predicción para 12 horas de estudio
+predict(modelo,data.frame(x=12))
+```
+
+```{r}
+#gráfico
+
+plot(x,y,main = "Hora de estudios vs Nota",
+     
+     xlab="Hora de estudios",
+     
+     ylab="Nota",
+     
+     pch=19)
+
+
+
+abline(modelo,lwd=2)
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
